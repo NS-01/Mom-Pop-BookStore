@@ -1,0 +1,124 @@
+@CHARSET "ISO-8859-1";
+
+/*page background*/
+body {
+	background-color:		#808080;
+	background-image:		url(background.jpg);
+	background-position:	center center;
+	background-repeat:		no-repeat;
+	background-size:		cover;
+}
+
+/*forms*/
+form {
+	
+	background-color:		rgba(25, 25, 25, 0.25);
+	border:					none;
+	border-radius:			4px;
+	box-shadow:				0px 0px 8px rgba(0, 0, 0, 0.75);
+	box-sizing:				border-box;
+	color:					rgba(25, 25, 25, 0.75);
+	margin-left:					100px;
+	margin-right:					100px;
+}
+fieldset {
+	border:					0;
+	padding:				0;
+}
+
+/*control bar*/
+#controlBar {
+	background-color:		rgba(50, 50, 50, 0.75);
+}
+
+/*website logo*/
+.logo img {
+	height:					64px;
+    width:					64px;
+}
+/*
+span {
+    display:				block;
+    overflow:				hidden;
+    padding-right:			5px;
+    padding-left:			10px;
+}
+
+span > input{ width: 100%; }*/
+
+/*search box*/
+input[type=text] {
+	background-color:		#c0c0c0;
+    background-image:		url(searchIcon.png);
+    background-position:	8px 8px;
+    background-repeat:		no-repeat;
+    background-size:		32px 32px;
+    border:					2px solid #808080;
+    border-radius:			4px;
+    box-sizing:				border-box;
+    color:					rgba(25, 25, 25, 0.75);
+    font-size: 1.5vw;
+	/*padding:				16px 40px;*/
+	resize:					none;
+	width:					100%;
+}
+input[type=text]:focus {
+    background-color: lightblue;
+}
+
+/*buttons*/
+input[type=button], input[type=submit], input[type=reset] {
+    background-color:		lightblue;
+    border:					2px solid #808080;
+    border-radius:			4px;
+    color:					rgba(25, 25, 25, 0.75);
+    cursor:					pointer;
+    float:					right;
+    font-size: 1.5vw;
+    /*padding:				16px 32px;*/
+    text-decoration:		none;
+}
+
+/*catalog*/
+#catalog {
+	border-collapse:		collapse;
+	table-layout:			auto;
+    width:					100%;
+}
+#catalog .absorbing-column {
+    width:					100%;
+}
+.catalogEntry img {
+	float:					left;
+	height:					auto;
+    width:					100%;
+}
+
+/*select*/
+.select {
+	background-color:		lightblue;
+	border:					2px solid #808080;
+    border-radius:			4px;
+    color:					rgba(25, 25, 25, 0.75);
+    /*padding:				16px 32px;*/
+    
+    /*width: 120px;*/
+    overflow: hidden;
+
+    /*background: #fff url(dropdown.gif) no-repeat 90% 50%;*/
+}
+
+.select select {
+    border: none;
+    box-shadow: none;
+    background-color: lightblue;
+    background-image: none;
+    font-size: 1.5vw;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+}
+
+.select select:focus {
+    outline: none;
+}

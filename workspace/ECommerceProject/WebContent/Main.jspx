@@ -1,0 +1,93 @@
+<?xml		version="1.0" encoding="ISO-8859-1" ?>
+<jsp:root	xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+	<jsp:directive.page contentType="text/html; charset=ISO-8859-1" 
+						pageEncoding="ISO-8859-1" session="false"/>
+	<jsp:output			doctype-root-element="html"
+						doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN"
+						doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+						omit-xml-declaration="true" />
+<html		xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<link	rel="StyleSheet"
+			href="${pageContext.request.contextPath}/res/style/style.css"
+			type="text/css"
+			title="MomAndPop"
+			media="screen, print" />
+	<title>Mom And Pop</title>
+</head>
+<body>
+
+<form action="" method="get"  id="controlBar">
+<fieldset>
+	<table>
+	<tr>
+		<td><input type="submit" name="login" id="login" value="Log in"/></td>
+		<td><input type="submit" name="register" id="register" value="Register"/></td>
+		<td><input type="submit" name="cart" id="cart" value="Cart"/></td>
+	</tr>
+	</table>
+</fieldset>
+</form>
+
+<br/>
+
+<form action="" method="get" id="searchBar">
+<fieldset>
+	<table>
+	<tr>
+		<td>
+			<div class="select">
+  			<select>
+    			<option value="all">Search All</option>
+    			<option value="author">Search Author</option>
+    			<option value="title">Search Title</option>
+  			</select>
+			</div>
+		</td>
+		<td>
+		<div class="search">	
+			<input	type="text"
+					id="search"
+					name="search"
+					placeholder="Search books.."/>
+		</div>	
+		</td>
+		<td><input type="submit" name="search" id="search" value="Go"/></td>
+	</tr>
+	</table>
+</fieldset>
+</form>
+
+<form action="" method="get" id="catalogBar">
+<fieldset>
+	<table class="w3-table-all w3-hoverable" id="catalog">
+	<tr>
+		<td><div class="catalogEntry"><img src="./res/drawable/catalog/book.png"/></div></td>
+		<td><div class="catalogEntry"><img src="./res/drawable/catalog/book.png"/></div></td>
+		<td><div class="catalogEntry"><img src="./res/drawable/catalog/book.png"/></div></td>
+		<td><div class="catalogEntry"><img src="./res/drawable/catalog/book.png"/></div></td>
+	</tr>
+	<tr>
+		<td><div class="catalogEntry"><img src="./res/drawable/catalog/book.png"/></div></td>
+		<td><div class="catalogEntry"><img src="./res/drawable/catalog/book.png"/></div></td>
+		<td><div class="catalogEntry"><img src="./res/drawable/catalog/book.png"/></div></td>
+		<td><div class="catalogEntry"><img src="./res/drawable/catalog/book.png"/></div></td>
+	</tr>
+	<tr>
+		<td><div class="catalogEntry"><img src="./res/drawable/catalog/book.png"/></div></td>
+		<td><div class="catalogEntry"><img src="./res/drawable/catalog/book.png"/></div></td>
+		<td><div class="catalogEntry"><img src="./res/drawable/catalog/book.png"/></div></td>
+		<td><div class="catalogEntry"><img src="./res/drawable/catalog/book.png"/></div></td>
+	</tr>
+	<tr>
+		<td><div class="catalogEntry"><img src="./res/drawable/catalog/book.png"/></div></td>
+		<td><div class="catalogEntry"><img src="./res/drawable/catalog/book.png"/></div></td>
+		<td><div class="catalogEntry"><img src="./res/drawable/catalog/book.png"/></div></td>
+		<td><div class="catalogEntry"><img src="./res/drawable/catalog/book.png"/></div></td>
+	</tr>
+	</table>
+</fieldset>
+</form>
+</body>
+</html>
+</jsp:root>
