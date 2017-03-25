@@ -14,31 +14,53 @@
 </head>
 
 <body>
-
+<div class="wrapper">
 <section id="navigationSection">
 
 	<ul id="controlBar">
-		<li class="controlItem"><a href="ShoppingCart">Cart</a></li>
+		<li class="controlItem"><a href="ShoppingCart">Shopping cart</a></li>
 		<li class="controlItem"><a href="Registration">Sign in</a></li>
+		<li class="controlItem"><a href="About">About us</a></li>
+		<li class="controlItem"><a href="Contact">Contact</a></li>
 		<li class="controlItem"><a href="Home">Home</a></li>
+		
 	</ul>
-
+	<div class="container">
 	<ul id="searchBar">
+		
 		<li class="searchItem"><img src="./res/drawable/icons/logo.png" id="logo"/></li>
 		<li class="searchItem">
 			<select id="categorySelector">
     			<option value="all">Search All</option>
-    			<option value="author">Search Science</option>
-    			<option value="title">Search Engineering</option>
-    			<option value="title">Search Fiction</option>
+    			<option value="author">Science</option>
+    			<option value="title">Engineering</option>
+    			<option value="title">Fiction</option>
   			</select>
   		</li>
 	<li class="searchItem"><input type="search" name="search" placeholder="Search books.." id="searchField"/></li>	
 	<li class="searchItem"><a href="Search" id="searchButton">Search</a></li>
 	</ul>
+	</div>
 
 </section>
 
+<section id="mainSection">
+	<table id="adTable">
+		<tr>
+			<td class="mainSectionItem" colspan="2"><img src="./res/drawable/ads/horizontal.png"/></td>
+			<td class="mainSectionItem" rowspan="2"><img src="./res/drawable/ads/vertical.png"/></td>
+		</tr>
+		<tr>
+			<td class="mainSectionItem" rowspan="2"><img src="./res/drawable/ads/vertical.png"/></td>
+			<td class="mainSectionItem"><img src="./res/drawable/ads/central.png"/></td>
+		</tr>
+		<tr>
+			<td class="mainSectionItem" colspan="2"><img src="./res/drawable/ads/horizontal.png"/></td>
+		</tr>
+	</table>
+</section>
+
+</div>
 </body>
 </html>
 </jsp:root>
