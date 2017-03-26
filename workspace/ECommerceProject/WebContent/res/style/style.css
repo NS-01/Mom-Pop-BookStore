@@ -66,6 +66,7 @@ body {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
+    z-index: 10;
     
 }
 #controlBar li a {
@@ -96,7 +97,8 @@ body {
 	box-sizing:				border-box;
 	white-space:nowrap;
 	height:100%;
-	padding: 20% 10% 0% 10%;
+	/*padding: 20% 10% 0% 10%;*/
+	padding: 20px 148px 20px 148px;
 	
 	width:100%;
 	margin: 0;

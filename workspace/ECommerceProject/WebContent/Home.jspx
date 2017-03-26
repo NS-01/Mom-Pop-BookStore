@@ -38,7 +38,7 @@
     			<option value="title">Fiction</option>
   			</select>
   		</li>
-	<li class="searchItem"><input type="search" name="search" placeholder="Search books.." id="searchField"/></li>	
+	<li class="searchItem"><input type="search" name="search" placeholder="Search bookstore..." id="searchField"/></li>	
 	<li class="searchItem"><a href="Search" id="searchButton">Search</a></li>
 	</ul>
 	</div>
