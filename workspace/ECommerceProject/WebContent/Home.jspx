@@ -15,16 +15,17 @@
 
 <body>
 <div class="wrapper">
-<section id="navigationSection">
-
-	<ul id="controlBar">
+<ul id="controlBar">
 		<li class="controlItem"><a href="ShoppingCart">Shopping cart</a></li>
 		<li class="controlItem"><a href="Registration">Sign in</a></li>
 		<li class="controlItem"><a href="About">About us</a></li>
 		<li class="controlItem"><a href="Contact">Contact</a></li>
-		<li class="controlItem"><a href="Home">Home</a></li>
+		<li class="controlItem"><a href="Home.jspx">Home</a></li>
 		
 	</ul>
+<section id="navigationSection">
+
+	
 	<div class="container">
 	<ul id="searchBar">
 		
@@ -47,15 +48,15 @@
 <section id="mainSection">
 	<table id="adTable">
 		<tr>
-			<td class="mainSectionItem" colspan="2"><img src="./res/drawable/ads/horizontal.png"/></td>
-			<td class="mainSectionItem" rowspan="2"><img src="./res/drawable/ads/vertical.png"/></td>
+			<td class="mainSectionItem" colspan="2"><img src="./res/drawable/ads/horizontal-1.png"/></td>
+			<td class="mainSectionItem" rowspan="2"><img src="./res/drawable/ads/vertical-1.png"/></td>
 		</tr>
 		<tr>
-			<td class="mainSectionItem" rowspan="2"><img src="./res/drawable/ads/vertical.png"/></td>
+			<td class="mainSectionItem" rowspan="2"><img src="./res/drawable/ads/vertical-2.png"/></td>
 			<td class="mainSectionItem"><img src="./res/drawable/ads/central.png"/></td>
 		</tr>
 		<tr>
-			<td class="mainSectionItem" colspan="2"><img src="./res/drawable/ads/horizontal.png"/></td>
+			<td class="mainSectionItem" colspan="2"><img src="./res/drawable/ads/horizontal-2.png"/></td>
 		</tr>
 	</table>
 </section>
