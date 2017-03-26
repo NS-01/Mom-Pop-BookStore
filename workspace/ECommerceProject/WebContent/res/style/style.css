@@ -1,5 +1,5 @@
 @CHARSET "ISO-8859-1";
-/**********************************************************color reference chart*/
+/***********************Color reference chart*/ 
 /*
 dusty						#96858f
 lavender					#6d7993
@@ -8,13 +8,14 @@ paper						#d5d5d5
 dark font					#17202a
 light font					#f2f3f4
 dark transparent			rgba(25, 25, 25, 0.75)
-medium transparent			rgba(25, 25, 25, 0.5)
 light transparent			rgba(25, 25, 25, 0.25)
-blue						#4286f4
 */
-/**********************************************************page background and defaults*/
+
+
+/*****************************page background*/
 body {
 	background-color:		#d5d5d5;
+	
 }
 #navigationSection {
 	background-image:		url(background.jpg);
@@ -23,30 +24,20 @@ body {
 	background-size:		cover;	
 }
 * {
-  margin:					0;
-  padding:					0;
+  margin: 0;
+  padding: 0;
 }
  *:focus {
-   outline:					0;
+   outline: none;
  }
- .wrapper {
-    margin-left:auto;
-    margin-right:auto;
-    overflow: hidden;
-    position: relative;
-}
-
-
-
-
 
 /**********************************************************control bar*/
 #controlBar {
-	/*background*/
-	background-color: rgba(25, 25, 25, 0.75);
-	/*location*/
+	background-color: rgba(25, 25, 25, 0.5);
 	margin: 0;
     padding: 0;
+    overflow: hidden;
+    list-style-type: none;
     /*font*/
     color: white;
 	font-family: verdana, sans-serif;
@@ -57,22 +48,16 @@ body {
 	text-align: center;
 	letter-spacing: 0px;
 	line-height: 20px;
-	/*other*/
-	overflow: hidden;
-    list-style-type: none;
 }
 #controlBar li a {
-	/*location*/
     display: inline-block;
+    color: #f2f3f4;
     text-align: center;
     padding: 8px;
-    /*color*/
-    color: #f2f3f4;
-    /*other*/
     text-decoration: none;
 }
 #controlBar li a:hover {
-    background-color: #4286f4;
+    background-color: rgba(25, 25, 25, 0.75);
 }
 /**********************************************************control bar item*/
 .controlItem {
@@ -80,45 +65,34 @@ body {
 }
 
 
-
-
-
 /**********************************************************search bar*/
 #searchBar {
 	border:					none;
 	box-sizing:				border-box;
-	white-space:nowrap;
+	white-space:nowrap
 	height:100%;
-	margin: 20% 10% 0% 10%;
+	margin: 250px 250px 250px 250px;
 	
-	width:100%;
-	/*margin: 0;*/
+	/*width:auto;*/
     padding: 0;
     overflow: hidden;
+    /*overflow: auto;*/
     list-style-type: none;
 }
 #searchBar li a {
-	
-	float: left;
-	display: inline-block;
-	
     overflow: hidden;
-    text-align: center;
+    display: inline-block;
+    /*text-align: center;*/
+    
     text-decoration: none;
 }
 /**********************************************************all search bar components*/
 #categorySelector, #searchField, #searchButton {
 	padding: 24px;
-	
 	text-align: center;
-	box-sizing:				border-box;
-	box-shadow: none;
+	border: none;
 	background-color: rgba(25, 25, 25, 0.5);
-	overflow: hidden;
-    outline: none;
-    border: none;
-    resize:					none;
-    
+	/*vertical-align: middle*/
 	/*font*/
     color: #f2f3f4;
 	font-family: verdana, sans-serif;
@@ -129,59 +103,95 @@ body {
 	text-align: center;
 	letter-spacing: 0px;
 	line-height: 20px;
-	
-	white-space:nowrap;
 	display:inline-block;
-	text-decoration: none;
+	
+	/*border:					2px groove rgba(25, 25, 25, 0.75);*/
 }
 #categorySelector:focus, #searchField:focus, #searchButton:focus, #categorySelector:hover, #searchField:hover, #searchButton:hover {
 	background-color: rgba(25, 25, 25, 0.75);
 }
-/**********************************************************search bar item*/
 .searchItem {
-	/*resize:					none;*/
 	float: left;
-	    /*width: 25%;*/
+	display:inline-block;
+	
+	/*width: 10%;*/
+	
 }
 /**********************************************************control logo*/
 #logo {
+	/*background-color: rgba(25, 25, 25, 0.5);*/
+	height:					64px;
+    /*width:					192px;*/
+    
 }
 /**********************************************************selection box*/
 #categorySelector {
-	padding-bottom: 23px;
-	
+    overflow: hidden;
+    outline: none;
+    border: none;
+    box-shadow: none;
 }
-/**********************************************************search input field*/
+#categorySelector select {
+	border: none;
+    box-shadow: none;
+    background-image: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+}
+
+
 #searchField {
-	
-}
-/**********************************************************search button*/
-#searchButton {
-}
-
-
-/**********************************************************mutable section*/
-#mainSection {
-	border-collapse:		collapse;
-	table-layout:			auto;
-    width:					100%;
-    /* margin: 128px 144px 128px 144px;*/
-}
-#mainSection .absorbing-column {
-    width:					100%;
-}
-#mainSection th, td {
-    padding: 20px;
-}
-.mainSectionItem img {
-	float:					left;
-	height:					auto;
-    width:					100%;
-}
-
-/*additional stuff*/
+	box-sizing:				border-box;
+    /*width:100%;*/
+    
     /*background-image:		url(searchIcon.png);
     background-position:	8px 8px;
     background-repeat:		no-repeat;
     background-size:		32px 32px;*/
+	/*padding:				16px 40px;*/
+	resize:					none;
+}
+/*#searchField:focus {
+	background-color: lightblue;
+}*/
+#searchButton {
+	
+	box-shadow: none;
+    
+    text-decoration: none;
+    
+}
+/*#searchButton:hover {
+    background-color: lightblue;
+}*/
+
+/*catalog*/
+#catalog {
+	border-collapse:		collapse;
+	table-layout:			auto;
+    width:					100%;
+}
+#catalog .absorbing-column {
+    width:					100%;
+}
+.catalogItem img {
+	float:					left;
+	height:					auto;
+    width:					100%;
+}
+#fixed_width_cart {
+	width: 30%;
+	height: 20%;
+	align: right;
+	right: 0%;
+}
+
+#fixed_width_cart2 {
+	width: 7%;
+	height: 5%;
+	align: right;
+	right: 0%;
+	list-style-image: inherit;
+}
 
