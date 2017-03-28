@@ -1,0 +1,54 @@
+<?xml		version="1.0" encoding="ISO-8859-1" ?>
+<jsp:root	xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+	<jsp:directive.page contentType="text/html; charset=ISO-8859-1" 
+						pageEncoding="ISO-8859-1" session="false"/>
+	<jsp:output			doctype-root-element="html"
+						doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN"
+						doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+						omit-xml-declaration="true" />
+<html		xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<link rel="StyleSheet" href="${pageContext.request.contextPath}/res/style/main.css" type="text/css" title="MomAndPop" media="screen, print" />
+	<title>Mom And Pop</title>
+	<script>
+		function resizeIframe(obj) {
+			obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		}
+	</script>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<ul id="controlBar">
+	<li class="controlItem"><a href="ShoppingCart">Shopping cart</a></li>
+	<li class="controlItem"><a href="Registration">Sign in</a></li>
+	<li class="controlItem"><a href="About">About us</a></li>
+	<li class="controlItem"><a href="Contact">Contact</a></li>
+	<li class="controlItem"><a href="Main.jspx">Home</a></li>	
+</ul>
+
+<section id="searchSection">
+	<ul id="searchBar">
+		<li class="searchItem"><img src="./res/drawable/icons/logo.png" id="logo"/></li>
+		<li class="searchItem">
+			<select id="categorySelector">
+    			<option value="all">Search All</option>
+    			<option value="author">Science</option>
+    			<option value="title">Engineering</option>
+    			<option value="title">Fiction</option>
+  			</select>
+  		</li>
+		<li class="searchItem"><input type="search" name="search" placeholder="Search bookstore..." id="searchField"/></li>	
+		<li class="searchItem"><a href="Search" id="searchButton">Search</a></li>
+	</ul>	
+</section>
+
+<iframe src="Home.jspx" scrolling="no" onload="resizeIframe(this)" id="contentFrame"></iframe>
+
+</div>
+</body>
+</html>
+</jsp:root>

@@ -15,14 +15,14 @@ blue						#4286f4
 /**********************************************************page background and defaults*/
 body {
 	background-color:		#d5d5d5;
+	height: 100%;
+    width: 100%;
 }
-#navigationSection {
+#searchSection {
 	background-image:		url(background.jpg);
 	background-position:	center center;
 	background-repeat:		no-repeat;
-	background-size:		cover;	
-	
-	
+	background-size:		cover;		
 }
 * {
   margin:					0;
@@ -31,10 +31,25 @@ body {
  *:focus {
    outline:					0;
  }
- .wrapper {
+body::-webkit-scrollbar {
+	width: 2em;
+	
+}
+body::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+body::-webkit-scrollbar-thumb {
+	background-color: rgba(25, 25, 25, 0.5);
+	outline: 1px solid slategrey;
+}
+body::-webkit-scrollbar-thumb:hover {
+	background-color: rgba(25, 25, 25, 0.75);
+	outline: 2px solid slategrey;
+}
+.wrapper {
 	display: block;
-    clear: both;
-    position: relative;
+	clear: both;
+	position: relative;
 }
 
 
@@ -148,56 +163,20 @@ body {
 }
 /**********************************************************search bar item*/
 .searchItem {
-	/*resize:					none;*/
 	float: left;
-	    /*width: 25%;*/
 }
-/**********************************************************control logo*/
-#logo {
-}
-/**********************************************************selection box*/
 #categorySelector {
-	padding-bottom: 23px;
-	
+	padding-bottom: 23px;	
 }
-/**********************************************************search input field*/
-#searchField {
-	/*min-width:600px;*/
-}
-/**********************************************************search button*/
-#searchButton {
-}
+/**********************************************************frame with mutable content*/
 
 
-/**********************************************************mutable section*/
-#mainSection {
-	border-collapse:		collapse;
-	table-layout:			auto;
-    width:					auto;
-    margin: 20px 148px 20px 148px;
+
+
+#contentFrame {
+    height: auto;
+    width: 100%;
+    overflow: hidden;
     
+    border: none;
 }
-
-#mainSection th, td {
-    padding: 20px;
-}
-.mainSectionItem img {
-	float:					left;
-	height:					auto;
-    width:					100%;
-    min-width: 400px;
-    min-height: 400px;
-    opacity: 0.5;
-    filter: alpha(opacity=50);
-}
-.mainSectionItem img:hover {
-	opacity: 1.0;
-    filter: alpha(opacity=100);
-}
-
-/*additional stuff*/
-    /*background-image:		url(searchIcon.png);
-    background-position:	8px 8px;
-    background-repeat:		no-repeat;
-    background-size:		32px 32px;*/
-

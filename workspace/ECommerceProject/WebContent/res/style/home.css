@@ -1,0 +1,31 @@
+@CHARSET "ISO-8859-1";
+/**********************************************************table with ads*/
+#adTable {
+	height:				100%;
+	width:				auto;
+
+	margin: 20px 148px 20px 148px;
+
+	border-collapse:	collapse;
+	table-layout:		auto;
+}
+#adTable th, td {
+	padding:			20px;
+}
+/**********************************************************ad images*/
+.advertisement img {
+	float:				left;
+	
+	width:				auto;
+	height:				auto;
+    
+    min-width:			400px;
+    min-height:			400px;
+    
+    opacity:			0.5;
+    filter:				alpha(opacity=50);
+}
+.advertisement img:hover {
+	opacity:			1.0;
+    filter:				alpha(opacity=100);
+}

@@ -1,6 +1,6 @@
 <?xml		version="1.0" encoding="ISO-8859-1" ?>
 <jsp:root	xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
-	<jsp:directive.page contentType="text/html; charset=ISO-8859-1" 
+	<jsp:directive.page	contentType="text/html; charset=ISO-8859-1" 
 						pageEncoding="ISO-8859-1" session="false"/>
 	<jsp:output			doctype-root-element="html"
 						doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -9,59 +9,26 @@
 <html		xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-	<link	rel="StyleSheet" href="${pageContext.request.contextPath}/res/style/style.css" type="text/css" title="MomAndPop" media="screen, print" />
-	<title>Mom And Pop</title>
+	<link rel="StyleSheet" href="${pageContext.request.contextPath}/res/style/home.css" type="text/css" title="MomAndPop" media="screen, print" />
+	<title>Advertisements</title>
 </head>
 
 <body>
-<div class="wrapper">
-<ul id="controlBar">
-		<li class="controlItem"><a href="ShoppingCart">Shopping cart</a></li>
-		<li class="controlItem"><a href="Registration">Sign in</a></li>
-		<li class="controlItem"><a href="About">About us</a></li>
-		<li class="controlItem"><a href="Contact">Contact</a></li>
-		<li class="controlItem"><a href="Home.jspx">Home</a></li>
-		
-	</ul>
-<section id="navigationSection">
 
-	
-	<div class="container">
-	<ul id="searchBar">
-		
-		<li class="searchItem"><img src="./res/drawable/icons/logo.png" id="logo"/></li>
-		<li class="searchItem">
-			<select id="categorySelector">
-    			<option value="all">Search All</option>
-    			<option value="author">Science</option>
-    			<option value="title">Engineering</option>
-    			<option value="title">Fiction</option>
-  			</select>
-  		</li>
-	<li class="searchItem"><input type="search" name="search" placeholder="Search bookstore..." id="searchField"/></li>	
-	<li class="searchItem"><a href="Search" id="searchButton">Search</a></li>
-	</ul>
-	</div>
+<table id="adTable">
+	<tr>
+		<td class="advertisement" colspan="2"><img src="./res/drawable/ads/horizontal-1.png"/></td>
+		<td class="advertisement" rowspan="2"><img src="./res/drawable/ads/vertical-1.png"/></td>
+	</tr>
+	<tr>
+		<td class="advertisement" rowspan="2"><img src="./res/drawable/ads/vertical-2.png"/></td>
+		<td class="advertisement"><img src="./res/drawable/ads/central.png"/></td>
+	</tr>
+	<tr>
+		<td class="advertisement" colspan="2"><img src="./res/drawable/ads/horizontal-2.png"/></td>
+	</tr>
+</table>
 
-</section>
-
-<section id="mainSection">
-	<table id="adTable">
-		<tr>
-			<td class="mainSectionItem" colspan="2"><img src="./res/drawable/ads/horizontal-1.png"/></td>
-			<td class="mainSectionItem" rowspan="2"><img src="./res/drawable/ads/vertical-1.png"/></td>
-		</tr>
-		<tr>
-			<td class="mainSectionItem" rowspan="2"><img src="./res/drawable/ads/vertical-2.png"/></td>
-			<td class="mainSectionItem"><img src="./res/drawable/ads/central.png"/></td>
-		</tr>
-		<tr>
-			<td class="mainSectionItem" colspan="2"><img src="./res/drawable/ads/horizontal-2.png"/></td>
-		</tr>
-	</table>
-</section>
-
-</div>
 </body>
 </html>
 </jsp:root>
