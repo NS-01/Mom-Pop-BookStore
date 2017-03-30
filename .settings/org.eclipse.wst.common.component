@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="Mom-Pop-BookStore2">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/workspace/ECommerceProject/src"/>
+        <property name="context-root" value="Mom-Pop-BookStore2"/>
+        <property name="java-output-path" value="/Mom-Pop-BookStore2/bin"/>
+    </wb-module>
+</project-modules>
