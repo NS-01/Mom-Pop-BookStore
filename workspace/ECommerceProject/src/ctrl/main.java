@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import bean.BookBean;
 import bean.CartBean;
+import bean.UserBean;
 import bean.VisitEventBean;
 import dao.BookDAO;
 import dao.CartDAO;
@@ -23,6 +24,7 @@ import dao.PurchaseOrderDAO;
 import dao.RegisterDAO;
 import dao.UserDAO;
 import dao.VisitEventDAO;
+import model.SIS;
 
 /**
  * Servlet implementation class main
@@ -47,21 +49,15 @@ public class main extends HttpServlet {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 		try {
-			PurchaseOrderDAO po = new PurchaseOrderDAO();
-			ArrayList<CartBean> list = null;
-			CartBean b = new CartBean("planet",20,"Fantasy","b001");
-			CartDAO a =new CartDAO();
-			a.addToCart("b001", "sabir2002");
-			for (Entry<Integer, CartBean> entry2 : a.displayCart().entrySet())
-				list.add(entry2.getValue());
-			po.submitOrder("sabir2002", "denied", list);
+			SIS sis = new SIS();
+			sis.insertEvent("012323", "b001", "Watched", "sabir2002");
 
-		}
-
-		 catch (ClassNotFoundException | SQLException e) {
+		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+	
 		
 		
 	}

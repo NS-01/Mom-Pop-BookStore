@@ -26,11 +26,12 @@ public class CartDAO {
 		//*****Add to Cart****///
 	public void addToCart(String bid, String username) throws
 	SQLException{
-		String query_cart = "INSERT INTO Cart(bid,username) VALUES ('" + bid + 
-		"','" + username + "')";
+		String query_cart = "INSERT INTO Cart(bid,username) VALUES (?,?)";
 		Connection con = this.ds.getConnection();
-		Statement statement = con.createStatement();
-		statement.executeUpdate(query_cart);
+		PreparedStatement statement = con.prepareStatement(query_cart);
+		statement.setString(1, bid);
+		statement.setString(2, username);
+		statement.executeUpdate();
 	
 		
 		statement.close();
@@ -38,7 +39,7 @@ public class CartDAO {
 }
 	
 		//******* Empty Cart ******//
-	public void EmptyCart(String bid) throws
+	public void EmptyCart() throws
 	SQLException{
 		String query_cart = "TRUNCATE TABLE CART";
 		Connection con = this.ds.getConnection();

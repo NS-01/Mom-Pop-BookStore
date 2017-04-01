@@ -45,7 +45,7 @@ public class PurchaseOrderDAO {
 
 			count_row++;
 			
-			statement.executeUpdate("Insert Into po (id,username,status,address) Values (" + count_row + ", '" + username
+			statement.executeUpdate("Insert Into po (username,status,address) Values ('" + username
 					+ "', '" + status + "'," + 1 +")" );
 
 			for (CartBean cart : list) {

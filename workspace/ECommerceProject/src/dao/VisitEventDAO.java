@@ -1,6 +1,8 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -19,17 +21,45 @@ public class VisitEventDAO {
 			}
 	}
 	//**** inserting an event when customer logs in ******//
-	public void insertEvent(String day, String bid,String eventtype, String username) throws
+	public void insertEvent(int id,String day, String bid,String eventtype, String username) throws
 	SQLException{
-		String query_cart = "INSERT INTO VisitEvent(day,bid,eventtype,username) VALUES ('"
-	 + day + "','" + bid + "','" + eventtype + "','" + username + "')";
+		String query_cart = "INSERT INTO VisitEvent(id,day,bid,eventtype,username) VALUES (?,?,?,?,?)";
 		Connection con = this.ds.getConnection();
-		Statement statement = con.createStatement();
-		statement.executeUpdate(query_cart);
+		PreparedStatement statement = con.prepareStatement(query_cart);
+		statement.setInt(1, id);
+		statement.setString(2, day);
+		statement.setString(3, bid);
+		statement.setString(4, eventtype);
+		statement.setString(5, username);
+		statement.executeUpdate();
 	
 		
 		statement.close();
 		con.close();
 }
+	// *****check the id number of logged in use *****//
+	public int checkCurrentUserID(String username) throws SQLException {
+		int check = 0;
+		String query = "select * from UserField where username=?";
+
+		Connection con = this.ds.getConnection();
+		PreparedStatement p = con.prepareStatement(query);
+		p.setString(1, username);
+		ResultSet r = p.executeQuery();
+		
+		while (r.next()) {
+			
+			
+			int id= r.getInt("id");
+			check =id;
+		
+
+		}
+
+		r.close();
+		p.close();
+		con.close();
+	return check;
+	}
 
 }
