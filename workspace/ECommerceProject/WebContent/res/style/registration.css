@@ -1,0 +1,119 @@
+@CHARSET "ISO-8859-1";
+
+* {
+	border:						0;
+	outline:					0;
+	
+}
+ 
+div.tab {
+    /*overflow: auto;*/
+    height:				100%;
+	width:				auto;
+	margin: 20px 148px 0px 148px;
+	border-collapse:	collapse;
+    background-color: rgba(25, 25, 25, 0.75);
+    
+}
+
+div.tab button {
+    background-color: transparent;
+    height:				100%;
+	width:				auto;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.2s;
+	display: inline-block;
+    
+    /*font*/
+    color: white;
+	font-family: verdana, sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: small-caps;
+	text-align: center;
+	letter-spacing: 0px;
+	line-height: 20px;
+	
+	text-align: center;
+	float: center
+}
+div.tab button:hover, button.active {
+    background-color: #4286f4;
+}
+
+.tabcontent {
+	background-image:		url(background.jpg);
+	background-position:	center center;
+	background-repeat:		no-repeat;
+	background-size:		cover;
+	margin: 0px 148px 20px 148px;
+	
+	-webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
+}
+
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+#register {
+	display: none;
+}
+.tabcontent input {
+	height:				100%;
+	width:				100%;
+	display: block;
+	background-color: rgba(25, 25, 25, 0.5);
+	padding: 8px;
+	margin: 8px 0px 8px 0px;
+	/*font*/
+    color: white;
+	font-family: verdana, sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: small-caps;
+	text-align: center;
+	letter-spacing: 0px;
+	line-height: 20px;
+	
+	transition: 0.2s;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+.tabcontent input:hover, input:focus {
+	background-color: rgba(25, 25, 25, 0.75);
+}
+
+.tabcontent button {
+	height:				100%;
+	width:				100%;
+	display: block;
+	background-color: rgba(25, 25, 25, 0.75);
+	padding: 8px;
+	margin: 8px 0px 8px 0px;
+	/*font*/
+    color: white;
+	font-family: verdana, sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: small-caps;
+	text-align: center;
+	letter-spacing: 0px;
+	line-height: 20px;
+	
+	transition: 0.2s;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+.tabcontent button:hover {
+	background-color: #4286f4;
+}

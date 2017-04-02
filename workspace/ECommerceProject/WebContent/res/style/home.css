@@ -8,7 +8,10 @@
 
 	border-collapse:	collapse;
 	table-layout:		auto;
+	
+	
 }
+
 #adTable th, td {
 	padding:			20px;
 }
@@ -24,8 +27,22 @@
     
     opacity:			0.5;
     filter:				alpha(opacity=50);
+    
+    transition: 1s;
+    
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
 }
 .advertisement img:hover {
 	opacity:			1.0;
     filter:				alpha(opacity=100);
+}
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 0.5;}
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 0.5;}
 }
