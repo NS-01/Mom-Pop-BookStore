@@ -54,8 +54,8 @@ public class CartDAO {
 	public Map<Integer, CartBean> displayCart() 
 			throws SQLException {
 
-		String query = "select b.bid as bid, b.title as title, b.category as category, b.price as price"
-				+ " from book b, cart c, userfield u "
+		String query = "select b.bid as bid, b.title as title, b.category as category, b.price as price,"
+				+ "b.pic_url as pic_url from book b, cart c, userfield u"
 				+ "where u.username = c.username and b.bid = c.bid";
 		Map<Integer, CartBean> rv = new HashMap<Integer, CartBean>();
 		Connection con = this.ds.getConnection();
@@ -69,8 +69,9 @@ public class CartDAO {
 			title_retrieve = r.getString(2);
 			category_retrieve = r.getString(3);
 			int price = Integer.parseInt(r.getString(4));
+			String pic_url_retrieve = r.getString(5);
 			
-			CartBean cart = new CartBean(title_retrieve, price, category_retrieve,bid);
+			CartBean cart = new CartBean(title_retrieve, price, category_retrieve,bid,pic_url_retrieve);
 			rv.put(count, cart);
 			count++;
 
