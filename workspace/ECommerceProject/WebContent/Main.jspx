@@ -1,5 +1,7 @@
 <?xml		version="1.0" encoding="ISO-8859-1" ?>
-<jsp:root	xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+<jsp:root	xmlns:jsp="http://java.sun.com/JSP/Page"
+			xmlns:c="http://java.sun.com/jsp/jstl/core"
+			xmlns:f="http://java.sun.com/jsp/jstl/fmt" version="2.0">
 	<jsp:directive.page contentType="text/html; charset=ISO-8859-1" 
 						pageEncoding="ISO-8859-1" session="false"/>
 	<jsp:output			doctype-root-element="html"
@@ -10,24 +12,20 @@
 
 <head>
 	<link rel="StyleSheet" href="${pageContext.request.contextPath}/res/style/main.css" type="text/css" title="MomAndPop" media="screen, print" />
+	<script type="text/javascript" src="res/main.js">;</script>
 	<title>Mom And Pop</title>
-	<script>
-		function resizeIframe(obj) {
-			obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-		}
-	</script>
 </head>
 
 <body>
 
 <div class="wrapper">
 
-<ul id="controlBar">
-	<li class="controlItem"><a href="ShoppingCart">Shopping cart</a></li>
-	<li class="controlItem"><a href="Registration">Sign in</a></li>
-	<li class="controlItem"><a href="About">About us</a></li>
-	<li class="controlItem"><a href="Contact">Contact</a></li>
-	<li class="controlItem"><a href="Main.jspx">Home</a></li>	
+<ul id="controlBar" class="controlBar">
+	<li class="controlItem"><a href="Home.jspx" target="contentFrame" id="cart" onclick="highlight(this)">Shopping cart</a></li>
+	<li class="controlItem"><a href="Registration.jspx" target="contentFrame" id="registration" onclick="highlight(this)">Sign in</a></li>
+	<li class="controlItem"><a href="Home.jspx" target="contentFrame" id="about" onclick="highlight(this)">About us</a></li>
+	<li class="controlItem"><a href="Home.jspx" target="contentFrame" id="contact" onclick="highlight(this)">Contact</a></li>
+	<li class="controlItem"><a href="Home.jspx" target="contentFrame" id="home" onclick="highlight(this)">Home</a></li>	
 </ul>
 
 <section id="searchSection">
@@ -46,7 +44,7 @@
 	</ul>	
 </section>
 
-<iframe src="Home.jspx" scrolling="no" onload="resizeIframe(this)" id="contentFrame"></iframe>
+<iframe src="Home.jspx" scrolling="no" onload="resizeIframe(this)" onchange="resizeIframe(this)" name = "contentFrame" id="contentFrame"></iframe>
 
 </div>
 </body>
