@@ -30,13 +30,13 @@ import model.SIS;
  * Servlet implementation class main
  */
 @WebServlet("/main")
-public class main extends HttpServlet {
+public class Main extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public main() {
+    public Main() {
         super();
         // TODO Auto-generated constructor stub
     }

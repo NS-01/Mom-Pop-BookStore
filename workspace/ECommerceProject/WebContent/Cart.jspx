@@ -1,17 +1,149 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
-<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+<?xml		version="1.0" encoding="ISO-8859-1" ?>
+<jsp:root	xmlns:jsp="http://java.sun.com/JSP/Page"
+			xmlns:c="http://java.sun.com/jsp/jstl/core"
+			xmlns:f="http://java.sun.com/jsp/jstl/fmt" version="2.0">
 	<jsp:directive.page contentType="text/html; charset=ISO-8859-1" 
-		pageEncoding="ISO-8859-1" session="false"/>
-	<jsp:output doctype-root-element="html"
-		doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN"
-		doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
-		omit-xml-declaration="true" />
-<html xmlns="http://www.w3.org/1999/xhtml">
+						pageEncoding="ISO-8859-1" session="false"/>
+	<jsp:output			doctype-root-element="html"
+						doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN"
+						doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+						omit-xml-declaration="true" />
+<html		xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-<title>Insert title here</title>
+	<link rel="StyleSheet" href="${pageContext.request.contextPath}/res/style/main.css" type="text/css" title="MomAndPop" media="screen, print" />
+	<script type="text/javascript" src="res/main.js">;</script>
+	<title>Shopping Cart</title>
 </head>
+
 <body>
-Not done
+
+<div class="wrapper">
+
+<ul id="controlBar" class="controlBar">
+	<li class="controlItem"><a href="Home.jspx" target="contentFrame" id="cart" onclick="highlight(this)">Shopping cart</a></li>
+	<li class="controlItem"><a href="Registration.jspx" target="contentFrame" id="registration" onclick="highlight(this)">Sign in</a></li>
+	<li class="controlItem"><a href="Home.jspx" target="contentFrame" id="about" onclick="highlight(this)">About us</a></li>
+	<li class="controlItem"><a href="Home.jspx" target="contentFrame" id="contact" onclick="highlight(this)">Contact</a></li>
+	<li class="controlItem"><a href="Home.jspx" target="contentFrame" id="home" onclick="highlight(this)">Home</a></li>	
+</ul>
+
+<section id="searchSection">
+	<ul id="searchBar">
+		<li class="searchItem"><img src="./res/drawable/icons/logo.png" id="logo"/></li>
+		<li class="searchItem">
+			<select id="categorySelector">
+    			<option value="all">Search All</option>
+    			<option value="author">Science</option>
+    			<option value="title">Engineering</option>
+    			<option value="title">Fiction</option>
+  			</select>
+  		</li>
+		<li class="searchItem"><input type="search" name="search" placeholder="Search bookstore..." id="searchField"/></li>	
+		<li class="searchItem"><a href="Search" id="searchButton">Search</a></li>
+	</ul>	
+</section>
+
+<center>
+<table id="bottomTable" name="bottomTable">
+<tr style="vertical-align: top;">
+  
+     <td style="width: 100%;">
+     <!-- empty cart -->
+     		<c:choose>
+				<c:when test="${empty numberofitems}">
+					<p style="float: center; font-family: $gibson-light-font-family; font-size: 34px;line-height: 1.2; color: #333;margin-bottom: 20px;">Your Shopping Cart is empty.</p>
+					
+					<h3 style="float: left; font-family: $gibson-light-font-family; font-size: 20px;color: #333;margin-bottom: 20px;">Shopping Cart has (0 items)</h3>
+					<BR />
+				</c:when>
+				<c:otherwise>
+					<h3 style="float: center; font-family: $gibson-light-font-family; font-size: 34px;line-height: 1.2; color: #333;margin-bottom: 20px;">Shopping Cart has (${numberofitems} items)</h3>
+					<BR />
+				</c:otherwise>
+			</c:choose>
+
+
+			<table class="leftTable" align = "left">
+				<c:choose>
+					<c:when test="${empty item}">
+						<TR>
+							<TD>
+								<h3 style="float: left; font-family: $Gibson Regular,Helvetica,Arial,Verdana,sans-serif; font-size: 18px; color: #333;margin-bottom: 20px;">Sign in to see items you may have already added to your cart. </h3>
+							</TD>
+						</TR>
+					</c:when>
+					<c:otherwise>
+						<td bgcolor=#1239999>Item</td>
+						<td bgcolor=#1239999>Title</td>
+						<td bgcolor=#1239999>Quantity</td>
+						<td bgcolor=#1239999>Item Price</td>
+						<td bgcolor=#1239999>Total Price</td>
+						
+						<c:forEach var="it" items="${item}">
+							<tr style="width: 85%;">
+								<td style="width:30%;"><img SRC="${it.bookPicture}" width="100"
+									height="100" /></td>
+								<td style="width: 30%;"><text id="name">${it.name}</text></td>
+								<td style="width: 30%;">
+								<font style="width: 10px">1</font>
+								<br /></td>
+								<td style="width: 30%;"><f:formatNumber type="currency">${it.price}</f:formatNumber></td>
+							</tr>
+						</c:forEach>
+
+					</c:otherwise>
+				</c:choose>
+
+			</table>
+
+
+
+
+			<TABLE class="rightTable" align="right">
+				<TR style="width: 20%;">
+					<TD><h5>Order Summary</h5>
+
+						<p>
+							Subtotal
+							<f:formatNumber type="currency">${cost}</f:formatNumber>
+						</p> 
+						<c:choose>
+							<c:when test="${empty item}">
+								<a href="/ECommerceProject/Payment" onclick="return checkOut()">Checkout</a>
+							</c:when>
+							<c:otherwise>
+								<a href="/ECommerceProject/Payment">Checkout</a>
+							</c:otherwise>
+						</c:choose>
+						</TD>
+			
+				</TR>
+
+			</TABLE>
+
+    	
+    	
+	</td>
+</tr>
+</table>
+</center>
+	
+<!-- 	<TABLE id="cost" name ="cost" style="float:center=0%">
+		<TR style="vertical-align:top">
+			<TD style="width: 100%">
+			<c:choose>
+			<c:when test="${empty numberofitems}">
+						<h3>Shopping Cart (0 items)</h3>
+					</c:when>
+					<c:otherwise>
+						<h3>Shopping Cart (${numberofitems} items)</h3>
+					</c:otherwise>
+				</c:choose>
+			</TD>
+		</TR>
+		</TABLE> -->
+</div>
 </body>
 </html>
 </jsp:root>
